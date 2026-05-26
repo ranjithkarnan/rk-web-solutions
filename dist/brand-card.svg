@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <circle cx="230" cy="120" r="280" fill="#2563EB" fill-opacity=".35"/>
+  <circle cx="980" cy="120" r="300" fill="#8B5CF6" fill-opacity=".3"/>
+  <circle cx="720" cy="520" r="360" fill="#06B6D4" fill-opacity=".18"/>
+  <path d="M0 150h1200M0 290h1200M0 430h1200M0 570h1200M160 0v630M320 0v630M480 0v630M640 0v630M800 0v630M960 0v630M1120 0v630" stroke="#E0F2FE" stroke-opacity=".09"/>
+  <rect x="88" y="92" width="132" height="132" rx="34" fill="url(#a)"/>
+  <path d="M122 180V136h28c10.6 0 17.5 6 17.5 15.1 0 6.3-3.4 11-9.2 13.2L171 180h-14.9l-11.3-14.8h-10.1V180H122Zm12.7-25.6h13c3.8 0 6.3-2.1 6.3-5.3s-2.5-5.2-6.3-5.2h-13v10.5Z" fill="white"/>
+  <path d="m181 180-14.4-21.2 13.8-22.8H195l-14.9 22.2L198 180h-17Z" fill="white"/>
+  <text x="88" y="322" fill="white" font-family="Poppins, Arial, sans-serif" font-size="72" font-weight="800">RK Web Solutions</text>
+  <text x="91" y="382" fill="#BAE6FD" font-family="Poppins, Arial, sans-serif" font-size="30" font-weight="600">Premium websites, dashboards, and automation systems</text>
+  <text x="91" y="438" fill="#CBD5E1" font-family="Poppins, Arial, sans-serif" font-size="24" font-weight="500">Built for small businesses, startups, clinics, gyms, HR teams, and service companies.</text>
+  <rect x="91" y="492" width="294" height="58" rx="29" fill="url(#a)"/>
+  <text x="124" y="530" fill="white" font-family="Poppins, Arial, sans-serif" font-size="20" font-weight="700">Get Free Consultation</text>
+  <defs>
+    <linearGradient id="a" x1="88" y1="92" x2="390" y2="552" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06B6D4"/>
+      <stop offset=".55" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+</svg>
