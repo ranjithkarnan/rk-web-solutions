@@ -9,13 +9,60 @@ import Navbar from '../components/Navbar';
 import Button from '../components/Button';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import { BackToTop, CursorGlow, ScrollProgress } from '../components/UtilityEffects';
+import SEO from '../components/SEO';
+import FloatingContactBar from '../components/FloatingContactBar';
 
 function CaseStudyPage({ slug }) {
   const study = caseStudies.find((item) => item.slug === slug) || caseStudies[0];
   const message = `Hi RK Web Solutions, I liked the ${study.title} case study and want something similar for my business.`;
+  const path = `/case-studies/${study.slug}`;
+  const title = `${study.title} Case Study | ${brand.name}`;
+  const description = `${study.intro} Explore the challenge, solution, features, impact, and timeline for this ${study.category.toLowerCase()} project.`;
+  const caseSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      name: study.title,
+      headline: title,
+      description,
+      url: `${brand.website}${path}`,
+      creator: {
+        '@type': 'Organization',
+        name: brand.name,
+        url: brand.website,
+      },
+      about: study.category,
+      keywords: [...study.tech, ...study.features].join(', '),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: brand.website,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Projects',
+          item: `${brand.website}/#projects`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: study.title,
+          item: `${brand.website}${path}`,
+        },
+      ],
+    },
+  ];
 
   return (
     <>
+      <SEO title={title} description={description} path={path} type="article" jsonLd={caseSchema} />
       <ScrollProgress />
       <CursorGlow />
       <Navbar />
@@ -127,6 +174,7 @@ function CaseStudyPage({ slug }) {
         </section>
       </main>
       <WhatsAppFloat />
+      <FloatingContactBar />
       <BackToTop />
     </>
   );

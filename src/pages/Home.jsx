@@ -43,6 +43,8 @@ import { BackToTop, CursorGlow, PageLoader, ScrollProgress } from '../components
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import HeroVideo from '../components/HeroVideo';
 import Logo from '../components/Logo';
+import SEO from '../components/SEO';
+import FloatingContactBar from '../components/FloatingContactBar';
 
 function useCounter(target) {
   const [value, setValue] = useState(0);
@@ -186,8 +188,11 @@ function ServicesSection() {
         text="From your public website to internal dashboards, every service is designed to improve trust, speed, clarity, and daily operations."
       />
       <motion.div className="card-grid services-grid" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }}>
-        {services.map(({ icon: Icon, title, description }) => (
+        {services.map(({ icon: Icon, title, description, image }) => (
           <motion.article className="glass-card service-card" key={title} variants={{ ...fadeUp, ...premiumCardHover }} whileHover="hover">
+            <div className="service-image" aria-hidden="true">
+              <img src={image} alt="" loading="lazy" />
+            </div>
             <div className="card-icon">
               <Icon size={24} />
             </div>
@@ -196,6 +201,39 @@ function ServicesSection() {
           </motion.article>
         ))}
       </motion.div>
+    </section>
+  );
+}
+
+function SEOContentSection() {
+  const serviceKeywords = [
+    'Business website development',
+    'Admin dashboard development',
+    'CRM and employee portals',
+    'Leave management systems',
+    'Clinic management portals',
+    'Gym website development',
+    'Water purifier company websites',
+    'SEO-friendly responsive websites',
+  ];
+
+  return (
+    <section className="seo-content-band">
+      <div>
+        <span className="eyebrow">Search-ready services</span>
+        <h2>Website and dashboard development for Indian small businesses</h2>
+        <p>
+          RK Web Solutions helps startups, clinics, gyms, HR teams, local service companies, and growing businesses build modern websites,
+          dashboards, employee portals, CRM tools, automation systems, and mobile responsive digital experiences.
+        </p>
+      </div>
+      <div className="seo-keyword-grid">
+        {serviceKeywords.map((keyword) => (
+          <a href="#contact" key={keyword}>
+            {keyword}
+          </a>
+        ))}
+      </div>
     </section>
   );
 }
@@ -892,8 +930,69 @@ function Footer() {
 }
 
 function Home() {
+  const homeTitle = `${brand.name} | Business Website, Dashboard & Web App Development`;
+  const homeDescription =
+    'RK Web Solutions builds SEO-friendly business websites, admin dashboards, web applications, CRM portals, employee systems, UI/UX redesigns, and automation workflows for growing businesses.';
+  const homeSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      name: brand.name,
+      url: brand.website,
+      image: `${brand.website}/brand-card.svg`,
+      description: homeDescription,
+      email: brand.email,
+      telephone: brand.phoneHref,
+      areaServed: ['India'],
+      priceRange: 'Custom Quote',
+      serviceType: services.map((service) => service.title),
+      sameAs: Object.values(brand.social).filter((link) => link.startsWith('http')),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: brand.name,
+      url: brand.website,
+      potentialAction: {
+        '@type': 'ContactAction',
+        target: `${brand.website}/#contact`,
+        name: 'Get Free Consultation',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.a,
+        },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'RK Web Solutions Services',
+      itemListElement: services.map((service, index) => ({
+        '@type': 'Service',
+        position: index + 1,
+        name: service.title,
+        description: service.description,
+        provider: {
+          '@type': 'Organization',
+          name: brand.name,
+          url: brand.website,
+        },
+        areaServed: 'India',
+      })),
+    },
+  ];
+
   return (
     <>
+      <SEO title={homeTitle} description={homeDescription} path="/" jsonLd={homeSchema} />
       <PageLoader />
       <ScrollProgress />
       <CursorGlow />
@@ -902,6 +1001,7 @@ function Home() {
         <Hero />
         <TrustedSection />
         <ServicesSection />
+        <SEOContentSection />
         <WhyChooseSection />
         <PortfolioSection />
         <DashboardShowcase />
@@ -914,6 +1014,7 @@ function Home() {
       </main>
       <Footer />
       <WhatsAppFloat />
+      <FloatingContactBar />
       <BackToTop />
     </>
   );
