@@ -2672,8 +2672,23 @@ select:focus {
   z-index: 100;
   display: grid;
   place-items: center;
-  background: #0f172a;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(6, 182, 212, 0.2), transparent 24rem),
+    radial-gradient(circle at 80% 12%, rgba(139, 92, 246, 0.18), transparent 24rem),
+    #0f172a;
   transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.page-loader::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 58px 58px;
+  mask-image: radial-gradient(circle, black, transparent 72%);
 }
 
 .page-loader-hidden {
@@ -2681,23 +2696,78 @@ select:focus {
   opacity: 0;
 }
 
+.loader-card {
+  position: relative;
+  z-index: 1;
+  width: min(430px, 100%);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.72);
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(20px);
+}
+
+.loader-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .loader-logo {
   display: grid;
-  width: 84px;
-  height: 84px;
+  flex: 0 0 auto;
+  width: 58px;
+  height: 58px;
   place-items: center;
-  border-radius: 24px;
+  border-radius: 18px;
   background: linear-gradient(135deg, var(--secondary), var(--primary), var(--accent));
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 900;
   box-shadow: 0 24px 70px rgba(37, 99, 235, 0.36);
 }
 
+.loader-brand strong,
+.loader-brand span {
+  display: block;
+}
+
+.loader-brand strong {
+  font-size: 1.05rem;
+}
+
+.loader-brand span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.loader-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.loader-preview span {
+  min-height: 54px;
+  border-radius: 16px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(103, 232, 249, 0.16), rgba(255, 255, 255, 0.05)),
+    rgba(255, 255, 255, 0.055);
+  background-size: 220% 100%;
+  animation: loaderShimmer 1.15s ease-in-out infinite;
+}
+
+.loader-preview span:first-child {
+  grid-column: 1 / -1;
+}
+
 .loader-line {
-  position: absolute;
-  bottom: 42%;
-  width: 160px;
-  height: 3px;
+  width: 100%;
+  height: 4px;
   overflow: hidden;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
@@ -2748,6 +2818,15 @@ select:focus {
   }
   100% {
     transform: translateX(230%);
+  }
+}
+
+@keyframes loaderShimmer {
+  0% {
+    background-position: 140% 0;
+  }
+  100% {
+    background-position: -80% 0;
   }
 }
 

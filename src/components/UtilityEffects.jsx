@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
+import { brand } from '../assets/brand';
 
 function ScrollProgress() {
   const [progress, setProgress] = useState(0);
@@ -72,8 +73,22 @@ function PageLoader() {
 
   return (
     <div className={`page-loader ${loading ? '' : 'page-loader-hidden'}`} aria-hidden="true">
-      <div className="loader-logo">RK</div>
-      <div className="loader-line" />
+      <div className="loader-card">
+        <div className="loader-brand">
+          <div className="loader-logo">RK</div>
+          <div>
+            <strong>{brand.name}</strong>
+            <span>Preparing your digital experience</span>
+          </div>
+        </div>
+        <div className="loader-preview">
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="loader-line" />
+      </div>
     </div>
   );
 }
