@@ -2246,6 +2246,126 @@ select:focus {
   margin: 0 auto 24px;
 }
 
+.lead-reply-page {
+  min-height: 100vh;
+  padding: 28px 0 80px;
+}
+
+.lead-reply-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  gap: 18px;
+}
+
+.lead-reply-shell {
+  width: min(1180px, calc(100% - 40px));
+  margin: 56px auto 0;
+}
+
+.lead-reply-copy {
+  width: min(760px, 100%);
+  margin-bottom: 34px;
+}
+
+.lead-reply-copy h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4.7rem);
+  line-height: 1.04;
+}
+
+.lead-reply-copy p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.lead-reply-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(380px, 1.05fr);
+  gap: 22px;
+}
+
+.lead-reply-input,
+.lead-reply-output,
+.lead-summary {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(18px);
+}
+
+.lead-reply-input {
+  padding: 22px;
+}
+
+.lead-reply-input textarea,
+.lead-reply-output textarea {
+  margin-top: 8px;
+}
+
+.lead-reply-output {
+  display: grid;
+  gap: 16px;
+  padding: 22px;
+}
+
+.lead-summary {
+  display: grid;
+  gap: 8px;
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.lead-summary strong {
+  color: #e0f2fe;
+}
+
+.lead-summary span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.lead-reply-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.lead-reply-actions .btn {
+  width: 100%;
+}
+
+.lead-reply-actions button {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.btn-disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.lead-reply-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  border-radius: 16px;
+  padding: 13px;
+  background: rgba(6, 182, 212, 0.08);
+  color: #bae6fd;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.lead-reply-note svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
 .scroll-progress {
   position: fixed;
   top: 0;
@@ -2721,7 +2841,8 @@ select:focus {
   }
 
   .case-hero,
-  .case-details {
+  .case-details,
+  .lead-reply-grid {
     grid-template-columns: 1fr;
   }
 
@@ -3065,6 +3186,24 @@ select:focus {
   .case-cta {
     width: calc(100% - 28px);
     padding: 28px 20px;
+  }
+
+  .lead-reply-header,
+  .lead-reply-shell {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .lead-reply-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .lead-reply-grid {
+    gap: 16px;
+  }
+
+  .lead-reply-actions {
+    grid-template-columns: 1fr;
   }
 
   .whatsapp-float {
