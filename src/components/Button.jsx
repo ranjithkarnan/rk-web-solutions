@@ -2,11 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-function Button({ children, href = '#contact', variant = 'primary', icon = true, className = '' }) {
+function Button({ children, href = '#contact', variant = 'primary', icon = true, className = '', onClick }) {
   return (
     <motion.a
       className={`btn btn-${variant} ${className}`}
       href={href}
+      onClick={onClick}
       whileHover={{ y: -3, scale: 1.025 }}
       whileTap={{ scale: 0.97 }}
       transition={{ type: 'spring', stiffness: 420, damping: 26 }}

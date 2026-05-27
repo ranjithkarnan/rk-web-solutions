@@ -46,7 +46,9 @@ function Navbar() {
             {link}
           </a>
         ))}
-        <Button href={contactHref}>Get Free Consultation</Button>
+        <Button href={contactHref} onClick={() => setIsOpen(false)}>
+          Get Free Consultation
+        </Button>
       </div>
     </header>
   );
