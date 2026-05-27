@@ -25,6 +25,18 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
   background: var(--dark);
@@ -2880,6 +2892,10 @@ select:focus {
     padding: 8px 9px 8px 12px;
   }
 
+  .navbar .brand-wordmark {
+    min-width: 0;
+  }
+
   .brand {
     font-size: 0.92rem;
   }
@@ -2942,6 +2958,10 @@ select:focus {
   .hero h1 {
     font-size: clamp(2.25rem, 10.4vw, 3.65rem);
     line-height: 1.02;
+  }
+
+  .hero-title {
+    max-width: 100%;
   }
 
   .hero-copy p {
@@ -3039,6 +3059,14 @@ select:focus {
     padding: 22px;
   }
 
+  .service-card {
+    min-height: auto;
+  }
+
+  .service-image {
+    height: clamp(118px, 34vw, 160px);
+  }
+
   .seo-content-band {
     width: min(100% - 28px, 1180px);
     border-radius: 24px;
@@ -3111,6 +3139,10 @@ select:focus {
 
   .contact-form {
     padding: 20px;
+  }
+
+  .contact-section {
+    gap: 28px;
   }
 
   .lead-form-top {
@@ -3198,6 +3230,23 @@ select:focus {
     flex-direction: column;
   }
 
+  .lead-reply-page {
+    padding-top: 18px;
+  }
+
+  .lead-reply-shell {
+    margin-top: 34px;
+  }
+
+  .lead-reply-copy h1 {
+    font-size: clamp(2rem, 9vw, 3.35rem);
+  }
+
+  .lead-reply-input,
+  .lead-reply-output {
+    padding: 18px;
+  }
+
   .lead-reply-grid {
     gap: 16px;
   }
@@ -3208,6 +3257,93 @@ select:focus {
 
   .whatsapp-float {
     display: none;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 780px) {
+  .section-shell,
+  .faq-section,
+  .testimonials-section {
+    width: min(100% - 44px, 1180px);
+  }
+
+  .services-grid,
+  .portfolio-grid,
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-tabs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .dash-metrics,
+  .employee-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 430px) {
+  .navbar {
+    width: calc(100% - 16px);
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand-wordmark {
+    max-width: 170px;
+  }
+
+  .hero {
+    padding-top: 104px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.08rem, 10.2vw, 3.1rem);
+  }
+
+  .mock-hero-card {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dashboard-tab {
+    min-height: 42px;
+    padding-inline: 6px;
+    font-size: 0.78rem;
+  }
+
+  .panel-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .portfolio-content,
+  .pricing-card,
+  .testimonial-card,
+  .case-panel {
+    padding: 22px;
+  }
+
+  .floating-contact-bar {
+    left: 8px;
+    right: 8px;
+    gap: 4px;
+    padding: 7px;
+  }
+
+  .floating-contact-bar a {
+    min-height: 52px;
+    font-size: 0.64rem;
   }
 }
 
@@ -3283,6 +3419,119 @@ select:focus {
     width: 54px;
     height: 54px;
     padding: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .section-shell,
+  .faq-section,
+  .testimonials-section,
+  .lead-reply-header,
+  .lead-reply-shell {
+    width: min(100% - 18px, 1180px);
+  }
+
+  .navbar {
+    top: 8px;
+    min-height: 58px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-wordmark {
+    max-width: 150px;
+  }
+
+  .brand-wordmark strong {
+    font-size: 0.86rem;
+  }
+
+  .mobile-panel {
+    top: calc(100% + 8px);
+  }
+
+  .hero h1 {
+    font-size: clamp(1.96rem, 10vw, 2.8rem);
+  }
+
+  .hero-copy p {
+    font-size: 0.94rem;
+  }
+
+  .btn {
+    min-height: 46px;
+    padding: 12px 15px;
+  }
+
+  .hero-visual {
+    min-height: 310px;
+  }
+
+  .mock-grid {
+    min-height: 300px;
+  }
+
+  .dashboard-preview,
+  .contact-form,
+  .lead-reply-input,
+  .lead-reply-output {
+    padding: 14px;
+  }
+
+  .floating-contact-bar a span {
+    max-width: 62px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-wordmark {
+    max-width: 132px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.82rem, 9.6vw, 2.45rem);
+  }
+
+  .hero-video-wrap {
+    height: 500px;
+  }
+
+  .service-image {
+    height: 112px;
+  }
+
+  .portfolio-thumb {
+    padding: 12px;
+  }
+
+  .dashboard-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-metric {
+    grid-template-columns: 1fr auto;
+  }
+
+  .dash-metric svg {
+    grid-row: span 2;
+  }
+
+  .employee-card {
+    align-items: flex-start;
+  }
+
+  .floating-contact-bar {
+    border-radius: 18px;
+  }
+
+  .floating-contact-bar a {
+    min-height: 50px;
+    font-size: 0.58rem;
   }
 }
 
