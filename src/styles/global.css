@@ -593,6 +593,13 @@ section {
   height: 12px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  padding: 0 12px;
+  color: rgba(219, 234, 254, 0.62);
+  font-size: 0.68rem;
+  line-height: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .mock-grid {
@@ -621,7 +628,12 @@ section {
 }
 
 .mock-sidebar span:first-child {
+  display: grid;
+  place-items: center;
   background: linear-gradient(135deg, var(--secondary), var(--primary));
+  color: white;
+  font-size: 0.82rem;
+  font-weight: 900;
 }
 
 .mock-content {
@@ -629,6 +641,152 @@ section {
   grid-template-rows: auto 1fr auto;
   gap: 18px;
   padding: 22px;
+}
+
+.mock-content-live {
+  grid-template-rows: auto auto 1fr auto;
+  gap: 12px;
+}
+
+.mock-dashboard-head,
+.mock-metric-card,
+.mock-chart-panel,
+.mock-activity-panel,
+.mock-crm-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.mock-dashboard-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-radius: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(6, 182, 212, 0.08));
+}
+
+.mock-dashboard-head small,
+.mock-panel-title small,
+.mock-metric-card small,
+.mock-crm-card small {
+  color: #bdd2e9;
+}
+
+.mock-dashboard-head strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.18rem;
+}
+
+.mock-dashboard-head > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 7px 10px;
+  background: rgba(34, 197, 94, 0.12);
+  color: #bbf7d0;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.mock-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mock-metric-card {
+  display: grid;
+  gap: 5px;
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.mock-metric-card strong {
+  font-size: 1.28rem;
+}
+
+.mock-metric-card span {
+  color: #bbf7d0;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.mock-live-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 10px;
+  min-height: 0;
+}
+
+.mock-chart-panel,
+.mock-activity-panel {
+  min-width: 0;
+  border-radius: 18px;
+  padding: 12px;
+}
+
+.mock-panel-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.mock-activity-panel {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.mock-activity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 9px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #dbeafe;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.mock-activity .status-dot {
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+}
+
+.mock-crm-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mock-crm-card {
+  border-radius: 16px;
+  padding: 11px;
+}
+
+.mock-crm-card strong,
+.mock-crm-card small {
+  display: block;
+}
+
+.mock-crm-card strong {
+  color: #e0f2fe;
+  font-size: 0.78rem;
+}
+
+.mock-crm-card small {
+  margin-top: 5px;
+  font-size: 0.68rem;
 }
 
 .mock-hero-card {
@@ -670,6 +828,11 @@ section {
   border-radius: 22px;
   padding: 26px;
   background: rgba(255, 255, 255, 0.05);
+}
+
+.mock-chart-panel .mock-chart {
+  height: 150px;
+  padding: 16px;
 }
 
 .mock-chart i {
@@ -3091,6 +3254,27 @@ select:focus {
     padding: 14px;
   }
 
+  .mock-content-live {
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .mock-dashboard-head {
+    padding: 13px;
+  }
+
+  .mock-metrics,
+  .mock-crm-row {
+    grid-template-columns: 1fr;
+  }
+
+  .mock-live-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mock-chart-panel .mock-chart {
+    height: 118px;
+  }
+
   .mock-hero-card {
     padding: 14px;
   }
@@ -3394,6 +3578,11 @@ select:focus {
     gap: 10px;
   }
 
+  .mock-dashboard-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .dashboard-tab {
     min-height: 42px;
     padding-inline: 6px;
@@ -3458,6 +3647,14 @@ select:focus {
 
   .mock-grid {
     grid-template-columns: 1fr;
+  }
+
+  .mock-activity-panel {
+    display: none;
+  }
+
+  .mock-crm-row {
+    display: none;
   }
 
   .mock-row {

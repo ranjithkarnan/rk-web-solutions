@@ -120,6 +120,99 @@ function HeroMockup() {
   );
 }
 
+function HeroMockupV2() {
+  const liveMetrics = [
+    { label: 'Today Leads', value: '42', change: '+18%' },
+    { label: 'Open Tasks', value: '16', change: '8 due' },
+    { label: 'Team Online', value: '12', change: 'Live' },
+  ];
+
+  return (
+    <motion.div
+      className="hero-visual hero-visual-live"
+      initial={{ opacity: 0, y: 38, rotateX: 8 }}
+      animate={{ opacity: 1, y: 0, rotateX: 0 }}
+      transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <div className="mock-browser">
+        <div className="browser-dots">
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="browser-pill">app.rkwebsolutions.com/live-dashboard</div>
+      </div>
+      <div className="mock-grid">
+        <div className="mock-sidebar">
+          <span>RK</span>
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="mock-content mock-content-live">
+          <div className="mock-dashboard-head">
+            <div>
+              <small>Business Command Center</small>
+              <strong>Live Operations</strong>
+            </div>
+            <span>
+              <i className="status-dot" /> Synced
+            </span>
+          </div>
+          <div className="mock-metrics">
+            {liveMetrics.map((metric) => (
+              <div className="mock-metric-card" key={metric.label}>
+                <small>{metric.label}</small>
+                <strong>{metric.value}</strong>
+                <span>{metric.change}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mock-live-grid">
+            <div className="mock-chart-panel">
+              <div className="mock-panel-title">
+                <span>Revenue & Leads</span>
+                <small>Last 7 days</small>
+              </div>
+              <div className="mock-chart">
+                {[38, 56, 48, 72, 64, 86, 78].map((height, index) => (
+                  <i key={height + index} style={{ height: `${height}%` }} />
+                ))}
+              </div>
+            </div>
+            <div className="mock-activity-panel">
+              <div className="mock-panel-title">
+                <span>Live Activity</span>
+                <small>Now</small>
+              </div>
+              {['Clinic enquiry assigned', 'Quote sent to RO client', 'HR leave approved'].map((item) => (
+                <div className="mock-activity" key={item}>
+                  <i className="status-dot" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mock-crm-row">
+            {['Lead Pipeline', 'Employee Portal', 'WhatsApp CRM'].map((item, index) => (
+              <div className="mock-crm-card" key={item}>
+                <strong>{item}</strong>
+                <small>{index === 0 ? '24 active leads' : index === 1 ? '96% attendance' : '12 unread chats'}</small>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="floating-card floating-card-a">
+        <span className="status-dot" />
+        12 users online
+      </div>
+      <div className="floating-card floating-card-b">Rs. 8.4L tracked</div>
+    </motion.div>
+  );
+}
+
 function Hero() {
   const headline = 'We Build Modern Business Websites & Smart Digital Solutions'.split(' ');
 
@@ -157,7 +250,7 @@ function Hero() {
           <span>Dashboard experts</span>
         </motion.div>
       </motion.div>
-      <HeroMockup />
+      <HeroMockupV2 />
     </section>
   );
 }
