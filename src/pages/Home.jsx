@@ -649,7 +649,13 @@ function FAQSection() {
 }
 
 const leadServices = ['Website', 'Dashboard', 'Web App', 'Automation', 'UI/UX', 'SEO'];
-const leadBudgets = ['Under Rs. 15,000', 'Rs. 15,000 - Rs. 30,000', 'Rs. 30,000 - Rs. 75,000', 'Rs. 75,000+', 'Need guidance'];
+const leadBudgets = [
+  'Starter Website (Rs. 7k - 10k)',
+  'Business Pro (Rs. 25k - 30k)',
+  'Enterprise Dashboard (Rs. 50k - 75k)',
+  'Enterprise Custom Solution (Rs. 75k+)',
+  'Need guidance',
+];
 const leadTimelines = ['Urgent', '1-2 weeks', '3-4 weeks', '1-2 months', 'Flexible'];
 const leadSources = ['Google/Search', 'Instagram', 'Referral', 'WhatsApp', 'LinkedIn', 'Other'];
 const initialLeadForm = {

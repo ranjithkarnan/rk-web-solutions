@@ -13,7 +13,7 @@ Email: info@rk-web-solutions.com
 Phone: 7358680423
 Requirement: Admin Dashboard
 Interested Services: Website
-Budget: Rs. 15,000 - Rs. 30,000
+Budget: Business Pro (Rs. 25k - 30k)
 Timeline: Flexible
 Source: Google/Search
 Message: Testing`;
