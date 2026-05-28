@@ -659,6 +659,7 @@ const leadBudgets = [
 ];
 const leadTimelines = ['Urgent', '1-2 weeks', '3-4 weeks', '1-2 months', 'Flexible'];
 const leadSources = ['Google/Search', 'Instagram', 'Referral', 'WhatsApp', 'LinkedIn', 'Other'];
+const mapEmbedUrl = 'https://www.google.com/maps?q=RK%20Web%20Solutions%2C%20Chennai%2C%20Tamil%20Nadu%2C%20India&output=embed';
 const initialLeadForm = {
   name: '',
   businessName: '',
@@ -764,10 +765,32 @@ function ContactSection() {
             <Phone size={20} /> {brand.phone}
           </a>
         </div>
-        <div className="map-placeholder">
-          <MapPin size={30} />
-          <span>{brand.location}</span>
-        </div>
+        <motion.article className="contact-location-card" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
+          <div className="location-card-head">
+            <span className="location-pin">
+              <MapPin size={20} />
+            </span>
+            <div>
+              <h3>Visit RK Web Solutions</h3>
+              <p>{brand.location}</p>
+            </div>
+          </div>
+          <div className="map-frame" aria-label="RK Web Solutions location map">
+            <iframe
+              title="RK Web Solutions location in Chennai"
+              src={mapEmbedUrl}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+          <div className="location-card-foot">
+            <p>Chennai-based digital solutions studio available for business meetings, consultations, website development, and dashboard solutions.</p>
+            <a href={brand.mapsUrl} target="_blank" rel="noreferrer" className="location-map-button">
+              Get Directions <ArrowUpRight size={16} />
+            </a>
+          </div>
+        </motion.article>
       </div>
 
       <form className="contact-form" onSubmit={handleWhatsAppSubmit}>

@@ -6,7 +6,8 @@ export const brand = {
   phone: '+91 98844 97990',
   phoneHref: '+919884497990',
   website: 'https://rkwebsolutions.com',
-  location: 'India-based digital solutions studio',
+  location: 'Chennai, Tamil Nadu, India',
+  mapsUrl: 'https://maps.app.goo.gl/6wAL5x9nXdgZuiFa9',
   founded: '2026',
   social: {
     instagram: '#contact',
