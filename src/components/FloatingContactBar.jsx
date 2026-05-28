@@ -2,6 +2,7 @@ import React from 'react';
 import { CalendarCheck, FileText, MessageCircle, Phone } from 'lucide-react';
 import { brand } from '../assets/brand';
 import { getWhatsAppLink } from '../assets/whatsapp';
+import { handleSectionNavigation } from '../utils/scrollToSection';
 
 function FloatingContactBar() {
   return (
@@ -14,11 +15,11 @@ function FloatingContactBar() {
         <MessageCircle size={18} />
         <span>WhatsApp</span>
       </a>
-      <a href="/#contact">
+      <a href="/#contact" onClick={(event) => handleSectionNavigation(event, 'contact')}>
         <CalendarCheck size={18} />
         <span>Book Service</span>
       </a>
-      <a href="/#pricing">
+      <a href="/#pricing" onClick={(event) => handleSectionNavigation(event, 'pricing')}>
         <FileText size={18} />
         <span>Get Quote</span>
       </a>

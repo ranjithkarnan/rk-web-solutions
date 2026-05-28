@@ -11,6 +11,7 @@ import WhatsAppFloat from '../components/WhatsAppFloat';
 import { BackToTop, CursorGlow, ScrollProgress } from '../components/UtilityEffects';
 import SEO from '../components/SEO';
 import FloatingContactBar from '../components/FloatingContactBar';
+import { handleSectionNavigation } from '../utils/scrollToSection';
 
 function CaseStudyPage({ slug }) {
   const study = caseStudies.find((item) => item.slug === slug) || caseStudies[0];
@@ -48,7 +49,7 @@ function CaseStudyPage({ slug }) {
           '@type': 'ListItem',
           position: 2,
           name: 'Projects',
-          item: `${brand.website}/#projects`,
+          item: `${brand.website}/`,
         },
         {
           '@type': 'ListItem',
@@ -69,7 +70,7 @@ function CaseStudyPage({ slug }) {
       <main className="case-study-page">
         <section className="case-hero section-shell">
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="case-hero-copy">
-            <motion.a className="back-link" href="/#projects" variants={fadeUp}>
+            <motion.a className="back-link" href="/#projects" variants={fadeUp} onClick={(event) => handleSectionNavigation(event, 'projects')}>
               <ArrowLeft size={18} /> Back to Projects
             </motion.a>
             <motion.span className="eyebrow" variants={fadeUp}>

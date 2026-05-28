@@ -4,12 +4,14 @@ import { Menu, X } from 'lucide-react';
 import { navLinks } from '../assets/data';
 import Button from './Button';
 import Logo from './Logo';
+import { handleSectionNavigation } from '../utils/scrollToSection';
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const isHomePage = window.location.pathname === '/';
-  const sectionHref = (link) => `${isHomePage ? '#' : '/#'}${link.toLowerCase()}`;
+  const sectionId = (link) => link.toLowerCase();
+  const sectionHref = (link) => `${isHomePage ? '#' : '/#'}${sectionId(link)}`;
   const contactHref = isHomePage ? '#contact' : '/#contact';
 
   useEffect(() => {
@@ -25,7 +27,7 @@ function Navbar() {
 
       <nav className="desktop-nav" aria-label="Primary navigation">
         {navLinks.map((link) => (
-          <a key={link} href={sectionHref(link)}>
+          <a key={link} href={sectionHref(link)} onClick={(event) => handleSectionNavigation(event, sectionId(link))}>
             {link}
           </a>
         ))}
@@ -42,7 +44,7 @@ function Navbar() {
 
       <div className={`mobile-panel ${isOpen ? 'mobile-panel-open' : ''}`}>
         {navLinks.map((link) => (
-          <a key={link} href={sectionHref(link)} onClick={() => setIsOpen(false)}>
+          <a key={link} href={sectionHref(link)} onClick={(event) => handleSectionNavigation(event, sectionId(link), () => setIsOpen(false))}>
             {link}
           </a>
         ))}

@@ -48,6 +48,7 @@ import Logo from '../components/Logo';
 import SEO from '../components/SEO';
 import FloatingContactBar from '../components/FloatingContactBar';
 import PricingExperience from '../components/pricing/PricingExperience';
+import { handleSectionNavigation } from '../utils/scrollToSection';
 
 function useCounter(target) {
   const [value, setValue] = useState(0);
@@ -145,7 +146,7 @@ function ServicesSection() {
             </div>
             <h3>{title}</h3>
             <p>{description}</p>
-            <a href="#contact" className="service-link">
+            <a href="#contact" className="service-link" onClick={(event) => handleSectionNavigation(event, 'contact')}>
               Discuss service <ArrowUpRight size={16} />
             </a>
           </motion.article>
@@ -179,7 +180,7 @@ function SEOContentSection() {
       </div>
       <div className="seo-keyword-grid">
         {serviceKeywords.map((keyword) => (
-          <a href="#contact" key={keyword}>
+          <a href="#contact" key={keyword} onClick={(event) => handleSectionNavigation(event, 'contact')}>
             {keyword}
           </a>
         ))}
@@ -891,7 +892,7 @@ function Footer() {
         </div>
         <div className="socials">
           {socials.map(({ icon: Icon, href, label }) => (
-            <a href={href} key={label} aria-label={`${brand.name} on ${label}`}>
+            <a href={href} key={label} onClick={(event) => handleSectionNavigation(event, href)} aria-label={`${brand.name} on ${label}`}>
               <Icon size={18} />
             </a>
           ))}
@@ -900,7 +901,7 @@ function Footer() {
       <div>
         <h3>Quick Links</h3>
         {['Home', 'Services', 'Projects', 'Pricing', 'About', 'Contact'].map((link) => (
-          <a key={link} href={`#${link.toLowerCase()}`}>
+          <a key={link} href={`#${link.toLowerCase()}`} onClick={(event) => handleSectionNavigation(event, link.toLowerCase())}>
             {link}
           </a>
         ))}
@@ -908,7 +909,7 @@ function Footer() {
       <div>
         <h3>Services</h3>
         {['Business Websites', 'Admin Dashboards', 'Web Applications', 'UI/UX Design', 'Automation'].map((link) => (
-          <a key={link} href="#services">
+          <a key={link} href="#services" onClick={(event) => handleSectionNavigation(event, 'services')}>
             {link}
           </a>
         ))}
@@ -917,7 +918,7 @@ function Footer() {
         <h3>Contact</h3>
         <a href={`mailto:${brand.email}`}>{brand.email}</a>
         <a href={`tel:${brand.phoneHref}`}>{brand.phone}</a>
-        <a href="#contact">Free Consultation</a>
+        <a href="#contact" onClick={(event) => handleSectionNavigation(event, 'contact')}>Free Consultation</a>
       </div>
       <p className="copyright">Copyright © {brand.founded} {brand.name}. All rights reserved.</p>
     </footer>
@@ -950,7 +951,7 @@ function Home() {
       url: brand.website,
       potentialAction: {
         '@type': 'ContactAction',
-        target: `${brand.website}/#contact`,
+        target: `${brand.website}/`,
         name: 'Get Free Consultation',
       },
     },

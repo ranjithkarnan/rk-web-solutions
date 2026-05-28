@@ -25,6 +25,7 @@ import {
 } from 'lucide-react';
 import { fadeUp, premiumCardHover, staggerContainer } from '../../animations/variants';
 import { getWhatsAppLink } from '../../assets/whatsapp';
+import { handleSectionNavigation } from '../../utils/scrollToSection';
 
 const pricingPlans = [
   {
@@ -190,7 +191,7 @@ function PricingCards() {
             ))}
           </ul>
           <div className="pricing-card-actions">
-            <a href="#contact" className={plan.featured ? 'btn btn-primary' : 'btn btn-ghost'}>
+            <a href="#contact" className={plan.featured ? 'btn btn-primary' : 'btn btn-ghost'} onClick={(event) => handleSectionNavigation(event, 'contact')}>
               Get Free Consultation <ArrowRight size={18} />
             </a>
             <a
@@ -511,7 +512,7 @@ function PricingFinalCta() {
       <h2>Ready to Build Your Business Digitally?</h2>
       <p>Let's create a modern website or dashboard solution that helps your business grow.</p>
       <div>
-        <a className="btn btn-primary" href="#contact">
+        <a className="btn btn-primary" href="#contact" onClick={(event) => handleSectionNavigation(event, 'contact')}>
           Book Free Consultation <ArrowRight size={18} />
         </a>
         <a className="btn btn-ghost" href={getWhatsAppLink('Hi RK Web Solutions, I want to discuss a website or dashboard project.')} target="_blank" rel="noreferrer">

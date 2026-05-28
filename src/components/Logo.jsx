@@ -1,9 +1,10 @@
 import React from 'react';
 import { brand } from '../assets/brand';
+import { handleSectionNavigation } from '../utils/scrollToSection';
 
 function Logo({ href = '#home', compact = false }) {
   return (
-    <a className={`brand ${compact ? 'brand-compact' : ''}`} href={href} aria-label={`${brand.name} home`}>
+    <a className={`brand ${compact ? 'brand-compact' : ''}`} href={href} onClick={(event) => handleSectionNavigation(event, href)} aria-label={`${brand.name} home`}>
       <span className="brand-mark" aria-hidden="true">
         <span>RK</span>
       </span>
