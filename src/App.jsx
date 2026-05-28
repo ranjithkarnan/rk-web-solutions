@@ -2,13 +2,16 @@ import React from 'react';
 import Home from './pages/Home.jsx';
 import CaseStudyPage from './pages/CaseStudyPage.jsx';
 import LeadReplyPage from './pages/LeadReplyPage.jsx';
-import { scrollToStoredSection } from './utils/scrollToSection';
+import { resetInitialScroll, scrollToStoredSection } from './utils/scrollToSection';
 
 function App() {
   const path = window.location.pathname;
 
-  React.useEffect(() => {
-    scrollToStoredSection();
+  React.useLayoutEffect(() => {
+    const usedStoredTarget = scrollToStoredSection();
+    if (!usedStoredTarget) {
+      resetInitialScroll();
+    }
   }, []);
 
   if (path.startsWith('/case-studies/')) {

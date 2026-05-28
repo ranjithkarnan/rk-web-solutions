@@ -38,9 +38,7 @@ export function handleSectionNavigation(event, target, afterNavigate) {
 
 export function scrollToStoredSection() {
   const sectionId = sessionStorage.getItem('rk-scroll-target');
-  const hashId = window.location.hash ? window.location.hash.slice(1) : '';
-  const targetId = sectionId || hashId;
-  if (!targetId) return;
+  if (!sectionId) return false;
 
   sessionStorage.removeItem('rk-scroll-target');
   if (window.location.hash) {
@@ -48,6 +46,19 @@ export function scrollToStoredSection() {
   }
 
   window.requestAnimationFrame(() => {
-    scrollToSection(targetId);
+    scrollToSection(sectionId);
   });
+  return true;
+}
+
+export function resetInitialScroll() {
+  if ('scrollRestoration' in window.history) {
+    window.history.scrollRestoration = 'manual';
+  }
+
+  if (window.location.hash) {
+    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+  }
+
+  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 }
