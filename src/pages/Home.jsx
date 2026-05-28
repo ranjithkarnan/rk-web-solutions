@@ -5,7 +5,9 @@ import {
   CalendarDays,
   Check,
   ChevronDown,
+  Download,
   Facebook,
+  FileText,
   Github,
   Instagram,
   Linkedin,
@@ -45,6 +47,7 @@ import HeroVideo from '../components/HeroVideo';
 import Logo from '../components/Logo';
 import SEO from '../components/SEO';
 import FloatingContactBar from '../components/FloatingContactBar';
+import PricingExperience from '../components/pricing/PricingExperience';
 
 function useCounter(target) {
   const [value, setValue] = useState(0);
@@ -66,151 +69,6 @@ function useCounter(target) {
   }, [target]);
 
   return value;
-}
-
-function HeroMockup() {
-  return (
-    <motion.div
-      className="hero-visual"
-      initial={{ opacity: 0, y: 38, rotateX: 8 }}
-      animate={{ opacity: 1, y: 0, rotateX: 0 }}
-      transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-    >
-      <div className="mock-browser">
-        <div className="browser-dots">
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className="browser-pill" />
-      </div>
-      <div className="mock-grid">
-        <div className="mock-sidebar">
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className="mock-content">
-          <div className="mock-hero-card">
-            <div>
-              <small>Revenue Automation</small>
-              <strong>₹8.4L</strong>
-            </div>
-            <span>+32%</span>
-          </div>
-          <div className="mock-chart">
-            {[38, 56, 48, 72, 64, 86, 78].map((height, index) => (
-              <i key={height + index} style={{ height: `${height}%` }} />
-            ))}
-          </div>
-          <div className="mock-row">
-            <span />
-            <span />
-            <span />
-          </div>
-        </div>
-      </div>
-      <div className="floating-card floating-card-a">
-        <span className="status-dot" />
-        Live CRM
-      </div>
-      <div className="floating-card floating-card-b">Smart Dashboard</div>
-    </motion.div>
-  );
-}
-
-function HeroMockupV2() {
-  const liveMetrics = [
-    { label: 'Today Leads', value: '42', change: '+18%' },
-    { label: 'Open Tasks', value: '16', change: '8 due' },
-    { label: 'Team Online', value: '12', change: 'Live' },
-  ];
-
-  return (
-    <motion.div
-      className="hero-visual hero-visual-live"
-      initial={{ opacity: 0, y: 38, rotateX: 8 }}
-      animate={{ opacity: 1, y: 0, rotateX: 0 }}
-      transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-    >
-      <div className="mock-browser">
-        <div className="browser-dots">
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className="browser-pill">app.rkwebsolutions.com/live-dashboard</div>
-      </div>
-      <div className="mock-grid">
-        <div className="mock-sidebar">
-          <span>RK</span>
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className="mock-content mock-content-live">
-          <div className="mock-dashboard-head">
-            <div>
-              <small>Business Command Center</small>
-              <strong>Live Operations</strong>
-            </div>
-            <span>
-              <i className="status-dot" /> Synced
-            </span>
-          </div>
-          <div className="mock-metrics">
-            {liveMetrics.map((metric) => (
-              <div className="mock-metric-card" key={metric.label}>
-                <small>{metric.label}</small>
-                <strong>{metric.value}</strong>
-                <span>{metric.change}</span>
-              </div>
-            ))}
-          </div>
-          <div className="mock-live-grid">
-            <div className="mock-chart-panel">
-              <div className="mock-panel-title">
-                <span>Revenue & Leads</span>
-                <small>Last 7 days</small>
-              </div>
-              <div className="mock-chart">
-                {[38, 56, 48, 72, 64, 86, 78].map((height, index) => (
-                  <i key={height + index} style={{ height: `${height}%` }} />
-                ))}
-              </div>
-            </div>
-            <div className="mock-activity-panel">
-              <div className="mock-panel-title">
-                <span>Live Activity</span>
-                <small>Now</small>
-              </div>
-              {['Clinic enquiry assigned', 'Quote sent to RO client', 'HR leave approved'].map((item) => (
-                <div className="mock-activity" key={item}>
-                  <i className="status-dot" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="mock-crm-row">
-            {['Lead Pipeline', 'Employee Portal', 'WhatsApp CRM'].map((item, index) => (
-              <div className="mock-crm-card" key={item}>
-                <strong>{item}</strong>
-                <small>{index === 0 ? '24 active leads' : index === 1 ? '96% attendance' : '12 unread chats'}</small>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="floating-card floating-card-a">
-        <span className="status-dot" />
-        12 users online
-      </div>
-      <div className="floating-card floating-card-b">Rs. 8.4L tracked</div>
-    </motion.div>
-  );
 }
 
 function Hero() {
@@ -250,7 +108,6 @@ function Hero() {
           <span>Dashboard experts</span>
         </motion.div>
       </motion.div>
-      <HeroMockupV2 />
     </section>
   );
 }
@@ -281,16 +138,16 @@ function ServicesSection() {
         text="From your public website to internal dashboards, every service is designed to improve trust, speed, clarity, and daily operations."
       />
       <motion.div className="card-grid services-grid" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }}>
-        {services.map(({ icon: Icon, title, description, image }) => (
+        {services.map(({ icon: Icon, title, description }) => (
           <motion.article className="glass-card service-card" key={title} variants={{ ...fadeUp, ...premiumCardHover }} whileHover="hover">
-            <div className="service-image" aria-hidden="true">
-              <img src={image} alt="" loading="lazy" />
-            </div>
             <div className="card-icon">
               <Icon size={24} />
             </div>
             <h3>{title}</h3>
             <p>{description}</p>
+            <a href="#contact" className="service-link">
+              Discuss service <ArrowUpRight size={16} />
+            </a>
           </motion.article>
         ))}
       </motion.div>
@@ -673,6 +530,17 @@ function TestimonialsSection() {
 }
 
 function PricingSection() {
+  const pricingGuidePoints = [
+    'Professional UI/UX design improves customer trust',
+    'Mobile responsive design helps reach more customers',
+    'Fast loading websites improve user experience',
+    'SEO-friendly structure helps Google visibility',
+    'Contact forms and WhatsApp integration increase leads',
+    'Quality testing prevents broken layouts and errors',
+    'Maintenance keeps the website secure and updated',
+    'Custom business features require planning, development, and testing',
+  ];
+
   return (
     <section id="pricing" className="section-shell">
       <SectionHeader eyebrow="Pricing" title="Flexible packages for different stages of growth" text="Every quote is tailored to your goals, pages, integrations, dashboards, and support needs." />
@@ -704,6 +572,34 @@ function PricingSection() {
           </motion.article>
         ))}
       </div>
+      <motion.div className="pricing-guide" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
+        <div className="pricing-guide-copy">
+          <span className="eyebrow">Pricing Guide PDF</span>
+          <h2>Why Professional Website Pricing Matters</h2>
+          <p>
+            A website is not just a design — it is your business identity, lead generation tool, customer trust builder, and digital growth system.
+          </p>
+          <div className="pricing-guide-actions">
+            <a className="btn btn-primary" href="/rk-web-solutions-pricing-guide.pdf" target="_blank" rel="noreferrer">
+              <Download size={18} /> Download Website Pricing Guide
+            </a>
+            <small>Pricing may vary based on business requirements, design complexity, and custom features.</small>
+          </div>
+        </div>
+        <div className="pricing-guide-card">
+          <div className="pdf-preview-icon">
+            <FileText size={30} />
+            <span>PDF</span>
+          </div>
+          <ul>
+            {pricingGuidePoints.map((point) => (
+              <li key={point}>
+                <Check size={16} /> {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
     </section>
   );
 }
@@ -1098,11 +994,9 @@ function Home() {
         <WhyChooseSection />
         <PortfolioSection />
         <DashboardShowcase />
-        <ProcessSection />
         <TestimonialsSection />
-        <PricingSection />
+        <PricingExperience />
         <StatsSection />
-        <FAQSection />
         <ContactSection />
       </main>
       <Footer />

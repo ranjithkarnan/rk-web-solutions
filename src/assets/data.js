@@ -45,49 +45,41 @@ export const services = [
   {
     icon: BriefcaseBusiness,
     title: 'Business Website Development',
-    image: '/service-website.svg',
     description: 'High-converting websites for local brands, startups, clinics, gyms, and service businesses.',
   },
   {
     icon: LayoutDashboard,
     title: 'Dashboard & Admin Panels',
-    image: '/service-dashboard.svg',
     description: 'Clean admin systems with roles, analytics, workflows, and fast operational views.',
   },
   {
     icon: Code2,
     title: 'Web App Development',
-    image: '/service-webapp.svg',
     description: 'Custom business portals and web applications built around your team processes.',
   },
   {
     icon: Palette,
     title: 'UI/UX Design',
-    image: '/service-uiux.svg',
     description: 'Premium interfaces with strong usability, modern visuals, and conversion-focused flows.',
   },
   {
     icon: RefreshCcw,
     title: 'Website Redesign',
-    image: '/service-redesign.svg',
     description: 'Upgrade outdated sites into modern, responsive, and trust-building digital experiences.',
   },
   {
     icon: Workflow,
     title: 'Business Automation',
-    image: '/service-automation.svg',
     description: 'Automate forms, approvals, lead routing, leave requests, CRM tasks, and reports.',
   },
   {
     icon: SearchCheck,
     title: 'SEO Friendly Websites',
-    image: '/service-seo.svg',
     description: 'Semantic, fast, search-ready websites with clean metadata and performance foundations.',
   },
   {
     icon: MonitorSmartphone,
     title: 'Mobile Responsive Design',
-    image: '/service-mobile.svg',
     description: 'Interfaces that feel polished on phones, tablets, laptops, and large desktop screens.',
   },
 ];
