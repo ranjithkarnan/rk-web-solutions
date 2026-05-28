@@ -9,7 +9,7 @@ const sampleLead = `Hi RK Web Solutions, I need help with a project.
 Lead ID: RK-682750
 Name: Testing
 Business: NewWorld
-Email: ranjithkarnanr@gmail.com
+Email: info@rk-web-solutions.com
 Phone: 7358680423
 Requirement: Admin Dashboard
 Interested Services: Website

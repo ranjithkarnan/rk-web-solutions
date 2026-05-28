@@ -271,7 +271,7 @@ function PricingEstimator() {
     if (hasEnterprise) {
       return {
         packageName: 'Enterprise Dashboard',
-        range: '?50,000 - ?75,000',
+        range: '₹50,000 - ₹75,000',
         complexity: 'Advanced',
       };
     }
@@ -279,14 +279,14 @@ function PricingEstimator() {
     if (hasPremium || pages > 5 || premiumCount >= 2) {
       return {
         packageName: 'Business Pro',
-        range: '?25,000 - ?30,000',
+        range: '₹25,000 - ₹30,000',
         complexity: 'Medium',
       };
     }
 
     return {
       packageName: 'Starter Website',
-      range: '?7,000 - ?10,000',
+      range: '₹7,000 - ₹10,000',
       complexity: 'Simple',
     };
   }, [pages, selected]);

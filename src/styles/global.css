@@ -1983,9 +1983,15 @@ section {
 
 .pricing-estimator {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: 28px;
   align-items: start;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.pricing-estimator > * {
+  min-width: 0;
 }
 
 .estimator-small-note {
@@ -1997,6 +2003,10 @@ section {
 }
 
 .estimator-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   border-radius: 28px;
   padding: 24px;
 }
@@ -2017,10 +2027,16 @@ section {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
   margin-top: 18px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .estimator-option {
   display: grid;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   gap: 6px;
   border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 16px;
@@ -2044,13 +2060,19 @@ section {
 
 .estimator-option span {
   font-weight: 900;
+  overflow-wrap: anywhere;
 }
 
 .estimator-option small {
   color: #aebbd0;
+  overflow-wrap: anywhere;
 }
 
 .estimate-total {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   margin-top: 18px;
   border-radius: 22px;
   padding: 22px;
@@ -2065,10 +2087,17 @@ section {
 .estimate-total strong {
   margin-top: 6px;
   font-size: clamp(2rem, 4vw, 3.4rem);
+  overflow-wrap: anywhere;
 }
 
 .estimate-total p {
   margin-bottom: 0;
+  overflow-wrap: anywhere;
+}
+
+.estimate-total p strong {
+  display: inline;
+  font-size: inherit;
 }
 
 .comparison-table {
@@ -3984,6 +4013,66 @@ select:focus {
     margin-top: 64px;
   }
 
+  .pricing-estimator {
+    gap: 20px;
+    overflow-x: hidden;
+  }
+
+  .pricing-estimator h2 {
+    font-size: clamp(1.8rem, 7.8vw, 2.6rem);
+  }
+
+  .estimator-small-note {
+    margin-top: 10px;
+    font-size: 0.88rem;
+  }
+
+  .estimator-card {
+    border-radius: 22px;
+    padding: 18px;
+  }
+
+  .page-slider {
+    gap: 8px;
+  }
+
+  .page-slider span,
+  .page-slider strong {
+    min-width: 0;
+  }
+
+  .estimator-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .estimator-option {
+    min-height: 64px;
+    border-radius: 14px;
+    padding: 11px;
+    font-size: 0.88rem;
+  }
+
+  .estimator-option small {
+    font-size: 0.76rem;
+  }
+
+  .estimate-total {
+    margin-top: 14px;
+    border-radius: 18px;
+    padding: 18px;
+  }
+
+  .estimate-total strong {
+    font-size: clamp(1.65rem, 8vw, 2.35rem);
+  }
+
+  .estimate-total p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
   .comparison-row {
     grid-template-columns: 1fr 0.78fr 0.78fr;
     gap: 8px;
@@ -4318,6 +4407,41 @@ select:focus {
     grid-template-columns: 1fr;
   }
 
+  .pricing-estimator {
+    width: 100%;
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  .estimator-card {
+    padding: 14px;
+  }
+
+  .page-slider {
+    grid-template-columns: 1fr auto;
+  }
+
+  .page-slider input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .estimator-options {
+    grid-template-columns: 1fr;
+  }
+
+  .estimator-option {
+    min-height: 58px;
+  }
+
+  .estimate-total {
+    padding: 16px;
+  }
+
+  .estimate-total strong {
+    font-size: clamp(1.5rem, 9vw, 2rem);
+  }
+
   .stats-band {
     width: calc(100% - 22px);
   }
@@ -4373,6 +4497,18 @@ select:focus {
 
   .hero-copy p {
     font-size: 0.94rem;
+  }
+
+  .pricing-estimator h2 {
+    font-size: clamp(1.65rem, 8.6vw, 2.2rem);
+  }
+
+  .estimator-card {
+    padding: 12px;
+  }
+
+  .estimator-option {
+    padding: 10px;
   }
 
   .btn {

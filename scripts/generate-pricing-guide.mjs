@@ -49,7 +49,7 @@ const lines = [
   '',
   'Section 6: Contact CTA',
   'Need a website for your business? Let us build a modern digital presence for your brand.',
-  'Contact: ranjithkarnanr@gmail.com',
+  'Contact: info@rk-web-solutions.com',
   'WhatsApp: +91 98844 97990',
   'Website: rkwebsolutions.com',
 ];
