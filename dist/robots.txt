@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rkwebsolutions.com/sitemap.xml
+Sitemap: https://rk-web-solutions.com/sitemap.xml
