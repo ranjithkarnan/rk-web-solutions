@@ -943,8 +943,18 @@ function Footer() {
         <a href={`tel:${brand.phoneHref}`}>{brand.phone}</a>
         <a href="#contact" onClick={(event) => handleSectionNavigation(event, 'contact')}>Free Consultation</a>
       </div>
-      <p className="copyright">Copyright © {brand.founded} {brand.name}. All rights reserved.</p>
-    </footer>
+<p className="copyright">
+  © {new Date().getFullYear()}{" "}
+  <a
+    href="https://rk-web-solutions.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {brand.name}
+  </a>
+  . All rights reserved.
+</p>   
+</footer>
   );
 }
 

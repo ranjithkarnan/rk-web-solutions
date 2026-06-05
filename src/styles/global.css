@@ -4730,3 +4730,39 @@ select:focus {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 4px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.copyright a {
+  display: inline;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.copyright a:hover {
+  color: #60a5fa;
+}
+
+.copyright {
+  white-space: nowrap;
+  text-align: center;
+}
+
+.copyright a {
+  display: inline;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
