@@ -314,7 +314,7 @@ function PricingEstimator() {
           {calculatorOptions.map((option) => (
             <button className={selected.includes(option.id) ? 'estimator-option estimator-option-active' : 'estimator-option'} key={option.id} type="button" onClick={() => toggle(option.id)}>
               <span>{option.label}</span>
-              <small>{option.price > 0 ? `+ Rs. ${option.price.toLocaleString('en-IN')}` : 'Included in starter'}</small>
+              <small>{selected.includes(option.id) ? 'Selected' : 'Tap to add'}</small>
             </button>
           ))}
         </div>
