@@ -104,9 +104,9 @@ function Hero() {
           </Button>
         </motion.div>
         <motion.div className="hero-proof" variants={fadeUp}>
-          <span>SEO-ready</span>
+          {/* <span>SEO-ready</span>
           <span>Mobile-first</span>
-          <span>Dashboard experts</span>
+          <span>Dashboard experts</span> */}
         </motion.div>
       </motion.div>
     </section>
