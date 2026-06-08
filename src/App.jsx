@@ -5,6 +5,7 @@ import LeadReplyPage from './pages/LeadReplyPage.jsx';
 import TermsPage from './pages/TermsPage.jsx';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage.jsx';
 import SupportPage from './pages/SupportPage.jsx';
+import ClientGuidePage from './pages/ClientGuidePage.jsx';
 import { resetInitialScroll, scrollToStoredSection } from './utils/scrollToSection';
 
 function App() {
@@ -36,6 +37,10 @@ function App() {
 
   if (path === '/support' || path === '/maintenance') {
     return <SupportPage />;
+  }
+
+  if (path === '/client-guide' || path === '/policies') {
+    return <ClientGuidePage />;
   }
 
   return <Home />;

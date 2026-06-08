@@ -104,9 +104,9 @@ function Hero() {
           </Button>
         </motion.div>
         <motion.div className="hero-proof" variants={fadeUp}>
-          {/* <span>SEO-ready</span>
+          <span>SEO-ready</span>
           <span>Mobile-first</span>
-          <span>Dashboard experts</span> */}
+          <span>Dashboard experts</span>
         </motion.div>
       </motion.div>
     </section>
@@ -943,6 +943,7 @@ function Footer() {
         <a href={`tel:${brand.phoneHref}`}>{brand.phone}</a>
         <a href="#contact" onClick={(event) => handleSectionNavigation(event, 'contact')}>Free Consultation</a>
         <a href="/support">Support & Maintenance Plans</a>
+        <a href="/client-guide">Client Policies & Support Guide</a>
         <a href="/terms">Terms & Conditions</a>
         <a href="/privacy-policy">Privacy Policy</a>
       </div>
