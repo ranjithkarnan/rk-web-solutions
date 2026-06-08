@@ -942,6 +942,9 @@ function Footer() {
         <a href={`mailto:${brand.email}`}>{brand.email}</a>
         <a href={`tel:${brand.phoneHref}`}>{brand.phone}</a>
         <a href="#contact" onClick={(event) => handleSectionNavigation(event, 'contact')}>Free Consultation</a>
+        <a href="/support">Support & Maintenance Plans</a>
+        <a href="/terms">Terms & Conditions</a>
+        <a href="/privacy-policy">Privacy Policy</a>
       </div>
 <p className="copyright">
   © {new Date().getFullYear()}{" "}
