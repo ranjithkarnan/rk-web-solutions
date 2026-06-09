@@ -13,6 +13,6 @@ export const brand = {
     instagram: 'https://www.instagram.com/rk_web_solutions/',
     linkedin: 'https://www.linkedin.com/company/123384203/admin/dashboard/',
     facebook: 'https://www.facebook.com/profile.php?id=61590930080977',
-    github: 'https://github.com/rkwebsolutions',
+    github: 'https://github.com/ranjithkarnan/rk-web-solutions',
   },
 };
