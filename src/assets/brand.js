@@ -10,9 +10,9 @@ export const brand = {
   mapsUrl: 'https://maps.app.goo.gl/6wAL5x9nXdgZuiFa9',
   founded: '2026',
   social: {
-    instagram: '#contact',
-    linkedin: '#contact',
-    facebook: '#contact',
-    github: '#contact',
+    instagram: 'https://www.instagram.com/rk_web_solutions/',
+    linkedin: 'https://www.linkedin.com/company/123384203/admin/dashboard/',
+    facebook: 'https://www.facebook.com/profile.php?id=61590930080977',
+    github: 'https://github.com/rkwebsolutions',
   },
 };
