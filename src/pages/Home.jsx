@@ -900,7 +900,7 @@ function Footer() {
     { icon: Facebook, href: brand.social.facebook, label: 'Facebook' },
     { icon: Instagram, href: brand.social.instagram, label: 'Instagram' },
     { icon: Linkedin, href: brand.social.linkedin, label: 'LinkedIn' },
-    { icon: Github, href: brand.social.github, label: 'GitHub' },
+    // { icon: Github, href: brand.social.github, label: 'GitHub' },
   ];
 
   return (
