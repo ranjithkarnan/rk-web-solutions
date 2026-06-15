@@ -6,6 +6,10 @@ import TermsPage from './pages/TermsPage.jsx';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage.jsx';
 import SupportPage from './pages/SupportPage.jsx';
 import ClientGuidePage from './pages/ClientGuidePage.jsx';
+import WebsiteDevelopmentChennai from './pages/services/WebsiteDevelopmentChennai.jsx';
+import WebDesignChennai from './pages/services/WebDesignChennai.jsx';
+import LandingPageDevelopmentChennai from './pages/services/LandingPageDevelopmentChennai.jsx';
+import DashboardDevelopmentChennai from './pages/services/DashboardDevelopmentChennai.jsx';
 import { resetInitialScroll, scrollToStoredSection } from './utils/scrollToSection';
 
 function App() {
@@ -41,6 +45,22 @@ function App() {
 
   if (path === '/client-guide' || path === '/policies') {
     return <ClientGuidePage />;
+  }
+
+  if (path === '/website-development-chennai') {
+    return <WebsiteDevelopmentChennai />;
+  }
+
+  if (path === '/web-design-chennai') {
+    return <WebDesignChennai />;
+  }
+
+  if (path === '/landing-page-development-chennai') {
+    return <LandingPageDevelopmentChennai />;
+  }
+
+  if (path === '/dashboard-development-chennai') {
+    return <DashboardDevelopmentChennai />;
   }
 
   return <Home />;
