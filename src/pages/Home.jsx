@@ -49,6 +49,7 @@ import SEO from '../components/SEO';
 import FloatingContactBar from '../components/FloatingContactBar';
 import PricingExperience from '../components/pricing/PricingExperience';
 import { handleSectionNavigation } from '../utils/scrollToSection';
+import { servicePageLinks } from './services/servicePageData';
 
 function useCounter(target) {
   const [value, setValue] = useState(0);
@@ -131,6 +132,13 @@ function TrustedSection() {
 }
 
 function ServicesSection() {
+  const serviceLinksByTitle = {
+    'Business Website Development': '/website-development-chennai',
+    'Dashboard & Admin Panels': '/dashboard-development-chennai',
+    'UI/UX Design': '/web-design-chennai',
+    'SEO Friendly Websites': '/website-development-chennai',
+  };
+
   return (
     <section id="services" className="section-shell">
       <SectionHeader
@@ -139,19 +147,29 @@ function ServicesSection() {
         text="From your public website to internal dashboards, every service is designed to improve trust, speed, clarity, and daily operations."
       />
       <motion.div className="card-grid services-grid" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }}>
-        {services.map(({ icon: Icon, title, description }) => (
+        {services.map(({ icon: Icon, title, description }) => {
+          const servicePageHref = serviceLinksByTitle[title];
+          return (
           <motion.article className="glass-card service-card" key={title} variants={{ ...fadeUp, ...premiumCardHover }} whileHover="hover">
             <div className="card-icon">
               <Icon size={24} />
             </div>
             <h3>{title}</h3>
             <p>{description}</p>
-            <a href="#contact" className="service-link" onClick={(event) => handleSectionNavigation(event, 'contact')}>
-              Discuss service <ArrowUpRight size={16} />
+            <a href={servicePageHref || '#contact'} className="service-link" onClick={servicePageHref ? undefined : (event) => handleSectionNavigation(event, 'contact')}>
+              {servicePageHref ? 'View local service' : 'Discuss service'} <ArrowUpRight size={16} />
             </a>
           </motion.article>
-        ))}
+          );
+        })}
       </motion.div>
+      <div className="home-service-page-links" aria-label="Local Chennai service pages">
+        {servicePageLinks.map((link) => (
+          <a href={link.path} key={link.path}>
+            {link.label} <ArrowUpRight size={15} />
+          </a>
+        ))}
+      </div>
     </section>
   );
 }
@@ -931,9 +949,9 @@ function Footer() {
       </div>
       <div>
         <h3>Services</h3>
-        {['Business Websites', 'Admin Dashboards', 'Web Applications', 'UI/UX Design', 'Automation'].map((link) => (
-          <a key={link} href="#services" onClick={(event) => handleSectionNavigation(event, 'services')}>
-            {link}
+        {servicePageLinks.map((link) => (
+          <a key={link.path} href={link.path}>
+            {link.label}
           </a>
         ))}
       </div>
