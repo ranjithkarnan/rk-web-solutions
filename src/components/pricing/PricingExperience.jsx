@@ -820,7 +820,7 @@ function PricingExperience() {
       <PricingNotes />
       <StartupFriendlySection />
       <ValueSection />
-      <PricingEstimator />
+      {/* <PricingEstimator /> */}
       <ComparisonTable />
       <BeforeAfterShowcase />
       <PricingProcess />
