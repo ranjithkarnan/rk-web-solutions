@@ -1,4 +1,3 @@
-import React from 'react';
 import ServiceSeoPage from './ServiceSeoPage';
 import { servicePages } from './servicePageData';
 

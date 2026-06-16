@@ -5642,6 +5642,7 @@ select:focus {
 
 .local-service-card svg,
 .local-service-list svg {
+  flex: 0 0 auto;
   color: #67e8f9;
 }
 

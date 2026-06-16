@@ -51,7 +51,7 @@ const lines = [
   'Need a website for your business? Let us build a modern digital presence for your brand.',
   'Contact: info@rk-web-solutions.com',
   'WhatsApp: +91 98844 97990',
-  'Website: rkwebsolutions.com',
+  'Website: rk-web-solutions.com',
 ];
 
 function escapePdfText(text) {

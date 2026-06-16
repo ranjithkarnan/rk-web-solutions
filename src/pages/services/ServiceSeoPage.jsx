@@ -32,6 +32,8 @@ function ServiceSeoPage({ page }) {
     '@type': 'Service',
     name: page.h1,
     description: page.description,
+    serviceType: page.keyword,
+    url: `${brand.website}${page.path}`,
     provider: {
       '@type': 'Organization',
       name: brand.name,
@@ -43,8 +45,6 @@ function ServiceSeoPage({ page }) {
       '@type': 'City',
       name: 'Chennai',
     },
-    serviceType: page.keyword,
-    url: `${brand.website}${page.path}`,
   };
 
   return (
@@ -74,7 +74,12 @@ function ServiceSeoPage({ page }) {
             <p>{page.intro}</p>
             <div className="hero-actions">
               <Button href="/#contact">Get Free Consultation</Button>
-              <a className="btn btn-ghost" href={getWhatsAppLink(`Hi RK Web Solutions, I want to discuss ${page.keyword}.`)} target="_blank" rel="noreferrer">
+              <a
+                className="btn btn-ghost"
+                href={getWhatsAppLink(`Hi RK Web Solutions, I want to discuss ${page.keyword}.`)}
+                target="_blank"
+                rel="noreferrer"
+              >
                 Chat on WhatsApp <ArrowRight size={18} />
               </a>
             </div>
@@ -103,7 +108,9 @@ function ServiceSeoPage({ page }) {
             <h2>Service scope</h2>
             <div className="local-service-list">
               {page.offers.map((item) => (
-                <span key={item}><CheckCircle2 size={17} /> {item}</span>
+                <span key={item}>
+                  <CheckCircle2 size={17} /> {item}
+                </span>
               ))}
             </div>
           </article>
@@ -142,7 +149,7 @@ function ServiceSeoPage({ page }) {
             {page.examples.map((example) => (
               <article className="local-example-card" key={example}>
                 <strong>{example}</strong>
-                <p>Example of the kind of business-focused website or dashboard experience RK Web Solutions can create.</p>
+                <p>Example of the kind of business-focused website, landing page, or dashboard experience RK Web Solutions can create.</p>
               </article>
             ))}
           </div>
@@ -154,11 +161,13 @@ function ServiceSeoPage({ page }) {
             <h2>Related Chennai service pages</h2>
           </div>
           <div>
-            {servicePageLinks.filter((link) => link.path !== page.path).map((link) => (
-              <a href={link.path} key={link.path}>
-                {link.label} <ArrowRight size={16} />
-              </a>
-            ))}
+            {servicePageLinks
+              .filter((link) => link.path !== page.path)
+              .map((link) => (
+                <a href={link.path} key={link.path}>
+                  {link.label} <ArrowRight size={16} />
+                </a>
+              ))}
           </div>
         </section>
 
@@ -183,10 +192,15 @@ function ServiceSeoPage({ page }) {
         <section className="pricing-final-cta section-shell">
           <span className="eyebrow">Start locally</span>
           <h2>Need {page.keyword}?</h2>
-          <p>Tell us your business goal, services, pages, and timeline. RK Web Solutions will help you plan the right digital solution.</p>
+          <p>Tell us your business goal, pages, features, and timeline. RK Web Solutions will help you plan the right digital solution.</p>
           <div>
             <Button href="/#contact">Contact RK Web Solutions</Button>
-            <a className="btn btn-ghost" href={getWhatsAppLink(`Hi RK Web Solutions, I need ${page.keyword} for my business.`)} target="_blank" rel="noreferrer">
+            <a
+              className="btn btn-ghost"
+              href={getWhatsAppLink(`Hi RK Web Solutions, I need ${page.keyword} for my business.`)}
+              target="_blank"
+              rel="noreferrer"
+            >
               Discuss on WhatsApp <ArrowRight size={18} />
             </a>
           </div>
