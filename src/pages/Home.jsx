@@ -86,7 +86,7 @@ function Hero() {
       </div>
       <motion.div className="hero-copy" variants={staggerContainer} initial="hidden" animate="visible">
         <motion.span className="eyebrow" variants={fadeUp}>
-          Premium digital systems for growing companies
+          {/* Premium digital systems for growing companies */}
         </motion.span>
         <motion.h1 className="hero-title" variants={staggerContainer}>
           {headline.map((word, index) => (
