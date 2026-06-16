@@ -150,16 +150,16 @@ function ServicesSection() {
         {services.map(({ icon: Icon, title, description }) => {
           const servicePageHref = serviceLinksByTitle[title];
           return (
-          <motion.article className="glass-card service-card" key={title} variants={{ ...fadeUp, ...premiumCardHover }} whileHover="hover">
-            <div className="card-icon">
-              <Icon size={24} />
-            </div>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <a href={servicePageHref || '#contact'} className="service-link" onClick={servicePageHref ? undefined : (event) => handleSectionNavigation(event, 'contact')}>
-              {servicePageHref ? 'View local service' : 'Discuss service'} <ArrowUpRight size={16} />
-            </a>
-          </motion.article>
+            <motion.article className="glass-card service-card" key={title} variants={{ ...fadeUp, ...premiumCardHover }} whileHover="hover">
+              <div className="card-icon">
+                <Icon size={24} />
+              </div>
+              <h3>{title}</h3>
+              <p>{description}</p>
+              <a href={servicePageHref || '#contact'} className="service-link" onClick={servicePageHref ? undefined : (event) => handleSectionNavigation(event, 'contact')}>
+                {servicePageHref ? 'View local service' : 'Discuss service'} <ArrowUpRight size={16} />
+              </a>
+            </motion.article>
           );
         })}
       </motion.div>
