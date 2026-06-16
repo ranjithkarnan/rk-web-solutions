@@ -983,7 +983,7 @@ function Footer() {
 function Home() {
   const homeTitle = `Website Development Services in Chennai | ${brand.name}`;
   const homeDescription =
-    'RK Web Solutions builds SEO-friendly business websites, admin dashboards, web applications, CRM portals, employee systems, UI/UX redesigns, and automation workflows for growing businesses.';
+    'RK Web Solutions creates websites, dashboards, web apps, and CRM systems for startups and growing businesses in Chennai.';
   const homeSchema = [
     {
       '@context': 'https://schema.org',
