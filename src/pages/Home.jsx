@@ -74,7 +74,7 @@ function useCounter(target) {
 }
 
 function Hero() {
-  const headline = 'We Build Modern Business Websites & Smart Digital Solutions'.split(' ');
+  const headline = 'Helping Businesses Build Modern Websites That Drive Results'.split(' ');
 
   return (
     <section id="home" className="hero section-shell">
@@ -86,7 +86,7 @@ function Hero() {
       </div>
       <motion.div className="hero-copy" variants={staggerContainer} initial="hidden" animate="visible">
         <motion.span className="eyebrow" variants={fadeUp}>
-          Premium digital systems for growing companies
+          Premium digital systems for business growth
         </motion.span>
         <motion.h1 className="hero-title" variants={staggerContainer}>
           {headline.map((word, index) => (
@@ -96,21 +96,79 @@ function Hero() {
           ))}
         </motion.h1>
         <motion.p variants={fadeUp}>
-          Helping businesses grow with premium websites, dashboards, automation systems, and modern digital experiences.
+          I build websites, dashboards, CRM systems, and custom web applications that help businesses grow faster.
         </motion.p>
         <motion.div className="hero-actions" variants={fadeUp}>
-          <Button href="#contact">Get Started</Button>
+          <Button href="#contact">Start Your Project</Button>
           <Button href="#projects" variant="ghost">
-            View Projects
+            View Portfolio
           </Button>
         </motion.div>
         <motion.div className="hero-proof" variants={fadeUp}>
-          <span>SEO-ready</span>
-          <span>Mobile-first</span>
-          <span>Dashboard experts</span>
+          <span>SEO Ready</span>
+          <span>Mobile Optimized</span>
+          <span>Lightning Fast</span>
+          <span>Long-Term Support</span>
         </motion.div>
       </motion.div>
+      <PremiumWorkspace />
     </section>
+  );
+}
+
+function PremiumWorkspace() {
+  const floatCards = ['Responsive Design', 'SEO Optimized', 'Fast Performance', 'Business Growth'];
+
+  return (
+    <motion.div
+      className="premium-workspace"
+      initial={{ opacity: 0, y: 34, scale: 0.96 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.8, delay: 0.18 }}
+      aria-label="Premium workspace preview"
+    >
+      <div className="workspace-glow" aria-hidden="true" />
+      <div className="workspace-laptop">
+        <div className="workspace-browser">
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="workspace-screen">
+          <div className="workspace-code">
+            <i />
+            <i />
+            <i />
+            <i />
+          </div>
+          <div className="workspace-dashboard">
+            <strong>Lead Growth</strong>
+            <div>
+              {[42, 68, 54, 82, 74].map((height, index) => (
+                <span key={index} style={{ height: `${height}%` }} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="workspace-phone">
+        <span />
+        <strong>Mobile Ready</strong>
+        <i />
+        <i />
+        <i />
+      </div>
+      {floatCards.map((card, index) => (
+        <motion.span
+          className={`workspace-float-card workspace-float-${index + 1}`}
+          key={card}
+          animate={{ y: [0, -9, 0] }}
+          transition={{ duration: 3.5 + index * 0.35, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          {card}
+        </motion.span>
+      ))}
+    </motion.div>
   );
 }
 
@@ -133,18 +191,20 @@ function TrustedSection() {
 
 function ServicesSection() {
   const serviceLinksByTitle = {
-    'Business Website Development': '/website-development-chennai',
-    'Dashboard & Admin Panels': '/dashboard-development-chennai',
-    'UI/UX Design': '/web-design-chennai',
-    'SEO Friendly Websites': '/website-development-chennai',
+    'Website Development': '/website-development-chennai',
+    'Landing Pages': '/landing-page-development-chennai',
+    'Dashboard Development': '/dashboard-development-chennai',
+    'CRM Systems': '/dashboard-development-chennai',
+    'Web Applications': '/dashboard-development-chennai',
+    'Website Redesign': '/web-design-chennai',
   };
 
   return (
     <section id="services" className="section-shell">
       <SectionHeader
         eyebrow="Services"
-        title="Digital solutions built for real business growth"
-        text="From your public website to internal dashboards, every service is designed to improve trust, speed, clarity, and daily operations."
+        title="Digital solutions designed to grow your business"
+        text="Each service is built around clear outcomes: more leads, better Google visibility, faster performance, stronger trust, and smoother operations."
       />
       <motion.div className="card-grid services-grid" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }}>
         {services.map(({ icon: Icon, title, description }) => {
@@ -208,17 +268,19 @@ function SEOContentSection() {
 }
 
 function WhyChooseSection() {
+  const timeline = features.slice(0, 4);
+
   return (
-    <section id="about" className="section-shell split-section">
+    <section id="about" className="section-shell why-rk-section">
       <SectionHeader
-        align="left"
-        eyebrow="Why choose RK"
-        title="A business-first team for polished design and practical systems"
-        text="We combine premium interface design with operational thinking, so your website or dashboard is beautiful and useful after launch."
+        eyebrow="Why clients work with me"
+        title="Direct, custom, business-focused digital development"
+        text="RK Web Solutions helps businesses grow using websites and digital systems, not just code. Every project is shaped around trust, leads, performance, automation, and long-term support."
       />
-      <motion.div className="feature-grid" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        {features.map(({ icon: Icon, title, text }) => (
-          <motion.div className="feature-block" key={title} variants={scaleIn} whileHover={{ y: -5, borderColor: 'rgba(6, 182, 212, 0.35)' }}>
+      <motion.div className="why-timeline-grid" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        {timeline.map(({ icon: Icon, title, text }, index) => (
+          <motion.div className="feature-block why-timeline-card" key={title} variants={scaleIn} whileHover={{ y: -5, borderColor: 'rgba(245, 179, 1, 0.45)' }}>
+            <span className="why-step">{String(index + 1).padStart(2, '0')}</span>
             <Icon size={22} />
             <div>
               <h3>{title}</h3>
@@ -231,13 +293,63 @@ function WhyChooseSection() {
   );
 }
 
+function TechnologyStackSection() {
+  const stack = ['React', 'Node.js', 'Express', 'PostgreSQL', 'Vite', 'Figma', 'GitHub', 'Vercel', 'Framer Motion'];
+
+  return (
+    <section className="section-shell tech-stack-section">
+      <SectionHeader
+        eyebrow="Technology Stack"
+        title="Modern tools for fast, scalable, business-ready systems"
+        text="I use proven technologies that support performance, maintainability, SEO, dashboards, and future business growth."
+      />
+      <motion.div className="tech-stack-grid" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }}>
+        {stack.map((item) => (
+          <motion.div className="tech-stack-card" key={item} variants={fadeUp} whileHover={{ y: -6, scale: 1.02 }}>
+            <span>{item.slice(0, 2)}</span>
+            <strong>{item}</strong>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
+  );
+}
+
+function ClientResultsSection() {
+  const resultCards = [
+    ['Project Success', 'Clear scope, polished UI, tested launch, and post-launch support.'],
+    ['Performance', 'Fast pages, optimized media, clean structure, and mobile-first delivery.'],
+    ['SEO Improvements', 'Search-ready pages, metadata, sitemap, schema, and local service targeting.'],
+    ['Lead Growth', 'WhatsApp CTAs, contact forms, trust blocks, and conversion-focused sections.'],
+    ['Business Impact', 'Digital systems that reduce manual work and improve daily operations.'],
+  ];
+
+  return (
+    <section className="section-shell client-results-section">
+      <SectionHeader
+        eyebrow="Client Results"
+        title="Built to improve visibility, enquiries, and operations"
+        text="The goal is not just a beautiful website. The goal is a digital asset that helps your business win more trust and handle growth better."
+      />
+      <div className="client-results-grid">
+        {resultCards.map(([title, text]) => (
+          <motion.article className="client-result-card" key={title} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </motion.article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function PortfolioSection() {
   return (
     <section id="projects" className="section-shell">
       <SectionHeader
         eyebrow="Projects"
-        title="Portfolio concepts for modern business teams"
-        text="A showcase of the kind of websites, portals, dashboards, and workflows RK Web Solutions can deliver."
+        title="Featured projects built around business outcomes"
+        text="Each project is presented as a result-focused digital asset: better visibility, stronger trust, smoother operations, and clearer enquiry paths."
       />
       <div className="portfolio-grid">
         {projects.map((project) => (
@@ -261,8 +373,13 @@ function PortfolioSection() {
               </div>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
+              <div className="portfolio-result-strip">
+                <span>Client: Local Business</span>
+                <span>Tech: React</span>
+                <span>Result: More Leads</span>
+              </div>
               <a href={`/case-studies/${project.slug}`} className="preview-link">
-                View Case Study <ArrowUpRight size={17} />
+                View Project <ArrowUpRight size={17} />
               </a>
             </div>
           </motion.article>
@@ -769,8 +886,8 @@ function ContactSection() {
         <SectionHeader
           align="left"
           eyebrow="Contact"
-          title="Tell us what you want to build next"
-          text="Share your project requirement and RK Web Solutions will help shape it into a clear, practical web solution."
+          title="Let's Build Something That Helps Your Business Grow"
+          text="Whether you need a website, dashboard, CRM, or custom web application, let's discuss how RK Web Solutions can help you generate leads, improve operations, and grow online."
         />
         <div className="contact-methods">
           <a href={getWhatsAppLink('Hi RK Web Solutions, I want a free consultation for my business.')} target="_blank" rel="noreferrer">
@@ -803,7 +920,7 @@ function ContactSection() {
             />
           </div>
           <div className="location-card-foot">
-            <p>Chennai-based digital solutions studio available for business meetings, consultations, website development, and dashboard solutions.</p>
+            <p>Chennai-based premium independent web development brand available for consultations, website development, dashboards, CRM systems, and long-term support.</p>
             <a href={brand.mapsUrl} target="_blank" rel="noreferrer" className="location-map-button">
               Get Directions <ArrowUpRight size={16} />
             </a>
@@ -946,6 +1063,7 @@ function Footer() {
             {link}
           </a>
         ))}
+        <a href="/blog">Blog</a>
       </div>
       <div>
         <h3>Services</h3>
@@ -960,6 +1078,7 @@ function Footer() {
         <a href={`mailto:${brand.email}`}>{brand.email}</a>
         <a href={`tel:${brand.phoneHref}`}>{brand.phone}</a>
         <a href="#contact" onClick={(event) => handleSectionNavigation(event, 'contact')}>Free Consultation</a>
+        <a href="/blog/website-developer-near-me-chennai">Website Developer Guide</a>
         <a href="/support">Support & Maintenance Plans</a>
         <a href="/client-guide">Client Policies & Support Guide</a>
         <a href="/terms">Terms & Conditions</a>
@@ -981,9 +1100,9 @@ function Footer() {
 }
 
 function Home() {
-  const homeTitle = `Website Development Services in Chennai | ${brand.name}`;
+  const homeTitle = `Premium Website Development Services in Chennai | ${brand.name}`;
   const homeDescription =
-    'RK Web Solutions creates websites, dashboards, web apps, and CRM systems for startups and growing businesses in Chennai.';
+    'RK Web Solutions helps businesses grow with premium websites, dashboards, CRM systems, web applications, SEO-ready development, and long-term support in Chennai.';
   const homeSchema = [
     {
       '@context': 'https://schema.org',
@@ -1051,14 +1170,16 @@ function Home() {
       <main>
         <Hero />
         <TrustedSection />
+        <StatsSection />
         <ServicesSection />
-        <SEOContentSection />
-        <WhyChooseSection />
         <PortfolioSection />
-        <DashboardShowcase />
+        <WhyChooseSection />
+        <ProcessSection />
+        <TechnologyStackSection />
+        <ClientResultsSection />
         <TestimonialsSection />
         <PricingExperience />
-        <StatsSection />
+        <FAQSection />
         <ContactSection />
       </main>
       <Footer />

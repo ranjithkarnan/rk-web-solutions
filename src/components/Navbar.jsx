@@ -35,7 +35,7 @@ function Navbar() {
 
       <div className="nav-actions">
         <Button href={contactHref} className="nav-cta">
-          Get Free Consultation
+          Book Free Consultation
         </Button>
         <button className="icon-button menu-button" type="button" onClick={() => setIsOpen((value) => !value)} aria-label="Toggle menu">
           {isOpen ? <X size={22} /> : <Menu size={22} />}

@@ -6,6 +6,8 @@ import TermsPage from './pages/TermsPage.jsx';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage.jsx';
 import SupportPage from './pages/SupportPage.jsx';
 import ClientGuidePage from './pages/ClientGuidePage.jsx';
+import BlogPage from './pages/BlogPage.jsx';
+import BlogArticlePage from './pages/BlogArticlePage.jsx';
 import WebsiteDevelopmentChennai from './pages/services/WebsiteDevelopmentChennai.jsx';
 import WebDesignChennai from './pages/services/WebDesignChennai.jsx';
 import LandingPageDevelopmentChennai from './pages/services/LandingPageDevelopmentChennai.jsx';
@@ -45,6 +47,14 @@ function App() {
 
   if (path === '/client-guide' || path === '/policies') {
     return <ClientGuidePage />;
+  }
+
+  if (path === '/blog') {
+    return <BlogPage />;
+  }
+
+  if (path === '/blog/website-developer-near-me-chennai') {
+    return <BlogArticlePage />;
   }
 
   if (path === '/website-development-chennai') {

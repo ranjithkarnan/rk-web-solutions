@@ -11,6 +11,7 @@ import {
   LayoutDashboard,
   LineChart,
   LockKeyhole,
+  Megaphone,
   MessagesSquare,
   MonitorSmartphone,
   Palette,
@@ -44,98 +45,91 @@ export const clients = [
 export const services = [
   {
     icon: BriefcaseBusiness,
-    title: 'Business Website Development',
-    description: 'High-converting websites for local brands, startups, clinics, gyms, and service businesses.',
+    title: 'Website Development',
+    description: 'Premium business websites built to create trust, improve Google visibility, and generate more enquiries.',
+  },
+  {
+    icon: Megaphone,
+    title: 'Landing Pages',
+    description: 'High-converting campaign pages for offers, ads, WhatsApp leads, bookings, and local promotions.',
   },
   {
     icon: LayoutDashboard,
-    title: 'Dashboard & Admin Panels',
-    description: 'Clean admin systems with roles, analytics, workflows, and fast operational views.',
+    title: 'Dashboard Development',
+    description: 'Admin dashboards and internal systems that help teams manage leads, staff, reports, and approvals.',
+  },
+  {
+    icon: Workflow,
+    title: 'CRM Systems',
+    description: 'Lead tracking, customer records, follow-ups, employee portals, and practical workflow automation.',
   },
   {
     icon: Code2,
-    title: 'Web App Development',
-    description: 'Custom business portals and web applications built around your team processes.',
-  },
-  {
-    icon: Palette,
-    title: 'UI/UX Design',
-    description: 'Premium interfaces with strong usability, modern visuals, and conversion-focused flows.',
+    title: 'Web Applications',
+    description: 'Custom web applications tailored to your business process, users, and growth requirements.',
   },
   {
     icon: RefreshCcw,
     title: 'Website Redesign',
-    description: 'Upgrade outdated sites into modern, responsive, and trust-building digital experiences.',
+    description: 'Transform outdated websites into modern, responsive, premium experiences that build trust.',
   },
   {
-    icon: Workflow,
-    title: 'Business Automation',
-    description: 'Automate forms, approvals, lead routing, leave requests, CRM tasks, and reports.',
-  },
-  {
-    icon: SearchCheck,
-    title: 'SEO Friendly Websites',
-    description: 'Semantic, fast, search-ready websites with clean metadata and performance foundations.',
-  },
-  {
-    icon: MonitorSmartphone,
-    title: 'Mobile Responsive Design',
-    description: 'Interfaces that feel polished on phones, tablets, laptops, and large desktop screens.',
+    icon: Wrench,
+    title: 'Maintenance',
+    description: 'Ongoing updates, bug fixes, speed improvements, security checks, and long-term technical support.',
   },
 ];
 
 export const features = [
-  { icon: Sparkles, title: 'Modern UI/UX', text: 'Premium layouts that make your business look trusted and current.' },
-  { icon: Zap, title: 'Fast Performance', text: 'Optimized pages and interactions that keep visitors moving.' },
-  { icon: Smartphone, title: 'Mobile Responsive', text: 'Every section is shaped for real mobile usage from day one.' },
-  { icon: LockKeyhole, title: 'Secure Systems', text: 'Careful structure for authenticated dashboards and private data.' },
-  { icon: SearchCheck, title: 'SEO Optimized', text: 'Clean technical foundations for stronger search visibility.' },
-  { icon: BriefcaseBusiness, title: 'Business Focused Solutions', text: 'Built around sales, operations, leads, and team productivity.' },
-  { icon: LayoutDashboard, title: 'Premium Dashboard Design', text: 'Readable analytics, smart widgets, and polished admin flows.' },
-  { icon: MessagesSquare, title: 'Ongoing Support', text: 'Support after launch for improvements, fixes, and scale-ups.' },
+  { icon: MessagesSquare, title: 'Direct Communication', text: 'Work directly with the developer planning, designing, and building your project.' },
+  { icon: Sparkles, title: 'Custom Development', text: 'Every website, dashboard, and workflow is shaped around your business goals.' },
+  { icon: SearchCheck, title: 'SEO Friendly', text: 'Clean structure, fast pages, and search-ready foundations for stronger visibility.' },
+  { icon: Zap, title: 'Performance Optimized', text: 'Fast-loading digital experiences that reduce friction and improve conversions.' },
+  { icon: BriefcaseBusiness, title: 'Business Focused', text: 'Messaging, layouts, and systems designed around leads, trust, and operations.' },
+  { icon: Wrench, title: 'Long-Term Support', text: 'Reliable support after launch for updates, fixes, improvements, and growth.' },
 ];
 
 export const projects = [
   {
     slug: 'leave-management-system',
-    title: 'Leave Management System',
-    description: 'Approval workflows, employee balances, manager views, and automated leave reporting.',
-    tags: ['HR', 'Dashboard', 'Automation'],
+    title: 'Femme Fit Hub',
+    description: 'Premium fitness website experience built to increase class enquiries, membership trust, and mobile conversions.',
+    tags: ['Fitness', 'Website', 'Leads'],
     tone: 'blue',
   },
   {
     slug: 'ro-water-purifier-website',
-    title: 'RO Water Purifier Website',
-    description: 'Lead-focused product pages, service booking, WhatsApp actions, and local SEO structure.',
-    tags: ['Website', 'SEO', 'Local Business'],
+    title: 'Driving School',
+    description: 'Lead-focused local website with course details, WhatsApp actions, service-area SEO, and enquiry capture.',
+    tags: ['Education', 'SEO', 'WhatsApp'],
     tone: 'cyan',
   },
   {
     slug: 'employee-dashboard',
-    title: 'Employee Dashboard',
-    description: 'Team directory, attendance widgets, tasks, announcements, and role-based access.',
-    tags: ['Portal', 'Employees', 'Admin'],
+    title: 'Advocate Website',
+    description: 'Professional service website designed to build credibility, explain practice areas, and capture consultations.',
+    tags: ['Legal', 'Trust', 'Branding'],
     tone: 'violet',
   },
   {
     slug: 'business-analytics-dashboard',
-    title: 'Business Analytics Dashboard',
-    description: 'Revenue cards, conversion charts, activity feeds, and executive reporting modules.',
-    tags: ['Analytics', 'SaaS', 'Reports'],
+    title: 'SM Cars',
+    description: 'Business website concept for vehicle listings, customer enquiries, WhatsApp leads, and premium presentation.',
+    tags: ['Automobile', 'Listings', 'Leads'],
     tone: 'green',
   },
   {
     slug: 'clinic-management-portal',
-    title: 'Clinic Management Portal',
-    description: 'Appointments, patient records, staff coordination, and clinic performance metrics.',
-    tags: ['Clinic', 'Portal', 'Scheduling'],
+    title: 'RO Water',
+    description: 'Local service website with product clarity, installation enquiries, service booking, and SEO-friendly pages.',
+    tags: ['RO Service', 'Local SEO', 'Booking'],
     tone: 'pink',
   },
   {
     slug: 'gym-management-website',
-    title: 'Gym Management Website',
-    description: 'Membership landing pages, class schedules, trainer profiles, and inquiry capture.',
-    tags: ['Gym', 'Website', 'CRM'],
+    title: 'Miracle Mens Wear',
+    description: 'Retail website direction focused on product trust, store enquiries, brand presence, and mobile-first browsing.',
+    tags: ['Retail', 'Fashion', 'Mobile'],
     tone: 'amber',
   },
 ];
@@ -228,12 +222,13 @@ export const caseStudies = [
 ];
 
 export const processSteps = [
-  'Requirement Discussion',
-  'UI/UX Planning',
+  'Discovery',
+  'Planning',
+  'Design',
   'Development',
-  'Testing & QA',
+  'Testing',
   'Deployment',
-  'Support & Maintenance',
+  'Support',
 ];
 
 export const testimonials = [
@@ -277,10 +272,10 @@ export const pricing = [
 ];
 
 export const stats = [
-  { label: 'Projects Completed', value: 48, suffix: '+' },
-  { label: 'Happy Clients', value: 32, suffix: '+' },
-  { label: 'Business Solutions', value: 18, suffix: '+' },
-  { label: 'UI Designs Created', value: 75, suffix: '+' },
+  { label: 'Projects Completed', value: 20, suffix: '+' },
+  { label: 'Responsive Websites', value: 100, suffix: '%' },
+  { label: 'Client Satisfaction', value: 95, suffix: '%' },
+  { label: 'Support', value: 24, suffix: '/7' },
 ];
 
 export const faqs = [

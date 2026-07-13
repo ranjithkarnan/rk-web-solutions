@@ -34,7 +34,7 @@ import { handleSectionNavigation } from "../../utils/scrollToSection";
 const pricingPlans = [
   {
     name: "Starter Website",
-    price: "₹10,000+",
+    price: "Discuss Scope",
     description:
       "Perfect for businesses that need a professional online presence with modern design and essential features.",
     bestFor:
@@ -54,7 +54,7 @@ const pricingPlans = [
   },
   {
     name: "Business Pro",
-    price: "₹25,000+",
+    price: "Most Popular",
     badge: "Most Popular",
     description:
       "Designed for growing businesses that need premium branding, lead generation, and a stronger digital presence.",
@@ -78,7 +78,7 @@ const pricingPlans = [
     ],
   },
   {
-    name: "Enterprise Dashboard",
+    name: "Dashboard",
     price: "Custom Quote",
     description:
       "Advanced web applications, dashboards, portals, and business automation systems tailored to your workflow.",
@@ -99,6 +99,25 @@ const pricingPlans = [
       "Testing & QA",
       "Deployment support",
       "Maintenance options",
+    ],
+  },
+  {
+    name: "Custom Solution",
+    price: "Custom Scope",
+    description:
+      "For businesses that need a tailored website, CRM, dashboard, automation workflow, or web application built around a specific growth goal.",
+    bestFor:
+      "Startups and growing businesses that need a unique digital system rather than a standard website package.",
+    features: [
+      "Requirement discovery",
+      "Custom UI/UX planning",
+      "Web application modules",
+      "CRM or workflow logic",
+      "API integrations",
+      "Scalable architecture",
+      "Performance optimization",
+      "Testing and launch support",
+      "Long-term improvement plan",
     ],
   },
 ];
